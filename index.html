@@ -6,93 +6,162 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-</head>
-<body>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.24/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            /* Modal styles */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed;
+                z-index: 50;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+            }
+            .modal-content {
+                max-width: 90%;
+                max-height: 80%;
+                margin: auto;
+            }
+            .close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-200">
     
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap w-full mb-20">
-            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">How to host a static website on S3</h1>
-              <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+        <!-- First Section -->
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-wrap w-full mb-20">
+                    <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">How to host a static website on S3</h1>
+                        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+                    </div>
+                    <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+                </div>
+                <div class="flex flex-wrap -m-4">
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot1.png" alt="content" onclick="openModal('Screenshot1.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot2.png" alt="content" onclick="openModal('Screenshot2.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot3.png" alt="content" onclick="openModal('Screenshot3.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot4.png" alt="content" onclick="openModal('Screenshot4.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-          </div>
-          <div class="flex flex-wrap -m-4">
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
+        </section>
+    
+        <!-- Second Section -->
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-0 mx-auto">
+                <div class="flex flex-wrap w-full mb-0">
+                    <!-- Content can be added here if needed -->
+                </div>
+                <div class="flex flex-wrap -m-4">
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot5.png" alt="content" onclick="openModal('Screenshot5.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot5.png" alt="content" onclick="openModal('Screenshot5.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot5.png" alt="content" onclick="openModal('Screenshot5.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg relative">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src="Screenshot5.png" alt="content" onclick="openModal('Screenshot5.png')">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-          </div>
+        </section>
+    
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImage">
         </div>
-      </section>
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap w-full mb-20">
-            
-          <div class="flex flex-wrap -m-4">
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/4 md:w-1/2 p-4">
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content">
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
+        <script>
+            // Get modal and elements
+            const modal = document.getElementById("myModal");
+            const modalImage = document.getElementById("modalImage");
+            const closeModal = document.getElementById("closeModal");
+    
+            // Function to open the modal
+            function openModal(src) {
+                modal.style.display = "flex";
+                modalImage.src = src;
+            }
+    
+            // Close the modal when clicking on the close button
+            closeModal.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+            // Close the modal when clicking outside of the modal content
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    
+    </body>
+    </html>
+    
+
 </body>
 </html>
